@@ -12,6 +12,10 @@ const LocationSchema = new mongoose.Schema({
 	city: {
 		type: String,
 		required: [true, 'City is required.']
+	},
+	isActive: {
+		type: Boolean,
+		default: true
 	}
 })
 

@@ -65,11 +65,13 @@ router.put('/:locationId', (req, res, next) => {
 	.catch(next)
 })
 
-//deletes a specific location
+//set a specific location to inactive
 router.delete('/:locationId', (req, res, next) => {
-	Location.findByIdAndDelete(req.params.locationId, () => {
+	Location.findByIdAndUpdate(req.params.locationId, {isActive: false}, {new: true})
+	.then(location => {
 		return res.status(200).json({
-			message: `Location with id ${req.params.locationId} was successfully deleted.`
+			message: "Location is no longer active.",
+			data: location
 		})
 	})
 	.catch(next)
