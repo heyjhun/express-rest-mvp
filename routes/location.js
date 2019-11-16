@@ -25,13 +25,30 @@ router.get('/', (req, res, next) => {
 
 //creates a new location document in the locations collection
 router.post('/', (req, res, next) => {
-	Location.create(req.body)
+	//check for duplicates
+	Location.find({building: req.body.building, street_address: req.body.street_address, city: req.body.city})
+	.then(location => {
+		if(location.length > 0){
+			return res.status(403).json({
+				message: "Location is already registered."
+			})
+		}else{
+			Location.create(req.body)
+			.then(location => {
+				return res.status(201).json({
+					message: "New location successfully registered.",
+					data: location
+				})
+			})
+		}
+	})
+	/*Location.create(req.body)
 	.then(location => {
 		return res.status(201).json({
 			message: "New location successfully registered.",
 			data: location
 		})
-	})
+	})*/
 	.catch(next)
 })
 
