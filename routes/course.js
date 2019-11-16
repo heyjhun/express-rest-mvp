@@ -24,12 +24,21 @@ router.get('/', (req, res, next) => {
 
 //create a new course document
 router.post('/', (req, res, next) => {
-	Course.create(req.body)
+	Course.find({name: req.body.name})
 	.then(course => {
-		return res.status(201).json({
-			message: "New course successfully registered.",
-			data: course
-		})
+		if(course.length > 0){
+			return res.status(403).json({
+				message: `${req.body.name} is already registered.`
+			})
+		}else{
+			Course.create(req.body)
+			.then(course => {
+				return res.status(201).json({
+					message: `${req.body.name} successfully registered.`,
+					data: course
+				})
+			})
+		}
 	})
 	.catch(next)
 })
