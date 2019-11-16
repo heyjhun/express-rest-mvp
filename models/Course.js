@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-//require the Batch model to be embedded in the Course Schema
-const BatchSchema = require('./Batch');
+//use object destructuring to selectively pick an object property from the exported object of the required file
+const { BatchSchema } = require('./Batch');
 
 const CourseSchema = new mongoose.Schema({
 	name: {

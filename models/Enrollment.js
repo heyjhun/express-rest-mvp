@@ -17,4 +17,10 @@ const EnrollmentSchema = new mongoose.Schema({
 
 const Enrollment = mongoose.model('Enrollment', EnrollmentSchema);
 
-module.exports = Enrollment;
+//export the schema and model as properties of an object
+//the schema will be used for embedding this in the User schema
+//the model will be used for mongoose model queries
+module.exports = {
+	EnrollmentSchema : EnrollmentSchema,
+	Enrollment : Enrollment	
+};

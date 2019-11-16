@@ -21,11 +21,13 @@ app.use(express.json());
 //used in parsing form data
 app.use(express.urlencoded({extended:true}))
 
-//require the router instance that was exported from /routes/api.js
+//require the router instances that were exported from /routes
 const locationRouter = require('./routes/location');
+const courseRouter = require('./routes/course');
 
-//whenever a request is received on the /locations endpoint, use the routes in locationRouter
+//use above routers in their corresponding URI endpoints
 app.use('/locations', locationRouter);
+app.use('/courses', courseRouter);
 
 //error-handling middleware
 //catches an err object with message property from any of the routes in the preceding router

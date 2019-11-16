@@ -18,11 +18,17 @@ const BatchSchema = new mongoose.Schema({
 		default: true
 	},
 	location_id: {
-		type: String
+		type: String,
 		required: [true, 'Location id is needed as a reference.']
 	}
 })
 
 const Batch = mongoose.model('Batch', BatchSchema);
 
-module.exports = Batch;
+//export the schema and model as properties of an object
+//the schema will be used for embedding this in the Course schema
+//the model will be used for mongoose model queries
+module.exports = {
+	BatchSchema : BatchSchema,
+	Batch : Batch
+};
