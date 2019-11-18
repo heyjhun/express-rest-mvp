@@ -4,6 +4,9 @@ const Course = require('../models/Course');
 
 const router = express.Router();
 
+//require moment for date and time parsing
+const moment = require("moment");
+
 //get an index list of all courses
 router.get('/', (req, res, next) => {
 	Course.find({})
@@ -85,26 +88,4 @@ router.delete('/:courseId', (req, res, next) => {
 	.catch(next)
 })
 
-//--------------------Batches CRUD---------------------//
-
-router.get('/:courseId/batches', (req, res, next) => {
-	Course.findById(req.params.courseId)
-	.then(course => {
-		if(course.batches.length > 0){
-			return res.status(200).json({
-				message: `Batches of course ${course.name} successfully retrieved.`,
-				data: course.batches
-			})
-		}else{
-			return res.status(404).json({
-				message: `Course ${course.name} currently has no batches in it.`
-			})
-		}
-	})
-	.catch(next)
-})
-
-/*router.post('/:courseId/batches', (req, res, next) => {
-
-})*/
 module.exports = router;

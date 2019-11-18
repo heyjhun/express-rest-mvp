@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//use object destructuring to selectively pick an object property from the exported object of the required file
 const { EnrollmentSchema } = require('./Enrollment');
 
 const UserSchema = new mongoose.Schema({

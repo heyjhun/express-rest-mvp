@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-//use object destructuring to selectively pick an object property from the exported object of the required file
-const { BatchSchema } = require('./Batch');
-
 const CourseSchema = new mongoose.Schema({
 	name: {
 		type: String,
@@ -19,8 +16,7 @@ const CourseSchema = new mongoose.Schema({
 	onOffer: {
 		type: Boolean,
 		default: true
-	},
-	batches: [BatchSchema]
+	}
 })
 
 const Course = mongoose.model('Course', CourseSchema);

@@ -24,10 +24,12 @@ app.use(express.urlencoded({extended:true}))
 //require the router instances that were exported from /routes
 const locationRouter = require('./routes/location');
 const courseRouter = require('./routes/course');
+const batchRouter = require('./routes/batch');
 
 //use above routers in their corresponding URI endpoints
 app.use('/locations', locationRouter);
 app.use('/courses', courseRouter);
+app.use('/batches', batchRouter);
 
 //error-handling middleware
 //catches an err object with message property from any of the routes in the preceding router
