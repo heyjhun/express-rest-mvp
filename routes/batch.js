@@ -24,7 +24,7 @@ router.get('/', (req, res, next) => {
 	.catch(next)
 })
 
-router.post('/batches', (req, res, next) => {
+/*router.post('/batches', (req, res, next) => {
 	//parse user-submitted dates via Moment JS
 	let start_date = moment(req.body.start_date).format('MMMM Do YYYY');
 	let end_date = moment(req.body.end_date).format('MMMM Do YYYY');
@@ -36,6 +36,6 @@ router.post('/batches', (req, res, next) => {
 			let conflicts = batches.filter(batch => batch.location_id === req.body.location_id && ())
 		}
 	})
-})
+})*/
 
 module.exports = router;

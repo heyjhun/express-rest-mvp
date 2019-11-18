@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "2ab843c0-03e4-4711-b12c-988317673c81",
+		"name": "express_booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "locations CRUD",
+			"item": [
+				{
+					"name": "retrieve all locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{locations_uri}}",
+							"host": [
+								"{{locations_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{test_location_data}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{locations_uri}}",
+							"host": [
+								"{{locations_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve specific location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{location_uri}}",
+							"host": [
+								"{{location_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"building\" : \"GEMPC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{location_uri}}",
+							"host": [
+								"{{location_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deactivate location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{location_uri}}",
+							"host": [
+								"{{location_uri}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "courses CRUD",
+			"item": [
+				{
+					"name": "retrieve all courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{courses_uri}}",
+							"host": [
+								"{{courses_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create new course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{test_course_data}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{courses_uri}}",
+							"host": [
+								"{{courses_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve specific course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{course_uri}}",
+							"host": [
+								"{{course_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update course",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"MERN\",\n\t\"description\" : \"Full stack Javascript\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{course_uri}}",
+							"host": [
+								"{{course_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deactivate course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{course_uri}}",
+							"host": [
+								"{{course_uri}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "batches CRUD",
+			"item": [
+				{
+					"name": "retrieve batches of a given course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{batches_uri}}",
+							"host": [
+								"{{batches_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a new batch for the specified course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{{test_batch_data}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{batches_uri}}",
+							"host": [
+								"{{batches_uri}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e6812d3e-e79a-4251-8521-fa7a930d35f6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "be18bd05-9a96-405b-ae6e-ffc533091ede",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "65c8c1a0-c738-45c2-ba4c-7821ff633516",
+			"key": "locations_uri",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "09f45be1-c7b1-4108-ad29-53560d8a6503",
+			"key": "location_uri",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "967f80d8-0520-4e8c-8d26-4e4e8f12b0d4",
+			"key": "test_location_data",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "11c941cc-7c75-4ee6-b30c-c377e68a3c96",
+			"key": "courses_uri",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "bcf9393c-4d3c-4581-8dba-13b190009c37",
+			"key": "course_uri",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "115357ed-a246-4d93-980b-7fa4898b41c5",
+			"key": "test_course_data",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "5fbbabba-acd1-4bf6-86d4-bb99d1a3668c",
+			"key": "batches_uri",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "deeb6c15-acda-4de3-acbc-3cc50279ecff",
+			"key": "batch_uri",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "063abb3f-46fe-46c2-8226-775d8d257757",
+			"key": "test_batch_data",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

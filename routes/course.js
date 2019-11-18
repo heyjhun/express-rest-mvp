@@ -4,9 +4,6 @@ const Course = require('../models/Course');
 
 const router = express.Router();
 
-//require moment for date and time parsing
-const moment = require("moment");
-
 //get an index list of all courses
 router.get('/', (req, res, next) => {
 	Course.find({})
