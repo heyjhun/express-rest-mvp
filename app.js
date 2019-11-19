@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 //use mongoose's connect method to connect to a local mongodb instance
 //by default, local mongodb uses the address 127.0.0.1:27017
-mongoose.connect('mongodb+srv://admin:BrdyBOYktXyW51Tf@learnmongo-9fdce.gcp.mongodb.net/expressbooking?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://admin-agustin:1991July08@cluster0-svqu7.mongodb.net/expressbooking?retryWrites=true&w=majority', {useNewUrlParser: true});
 
 let db = mongoose.connection;
 

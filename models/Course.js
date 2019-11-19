@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 
 const CourseSchema = new mongoose.Schema({
 	name: {
@@ -16,6 +17,10 @@ const CourseSchema = new mongoose.Schema({
 	onOffer: {
 		type: Boolean,
 		default: true
+	},
+	created_on: {
+		type: Date,
+		default: moment()
 	}
 })
 
